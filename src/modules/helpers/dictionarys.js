@@ -33,6 +33,7 @@ const dictionarys = [
 		"void": "PR",
 		"volatile": "PR",
 		"while": "PR",
+		"include": "PR",
 		"main": "PR"
 	},
 	// Logical operators

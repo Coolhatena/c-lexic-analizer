@@ -25,7 +25,7 @@ let getKeywords = (text) => {
 		}
 
 		if(!dictCoincidence) {
-			let entry = `${word}: ID\n`;
+			let entry = (word.match(/[0-9]+/)) ? `${word}: NUM\n` :`${word}: ID\n`;
 			console.log(entry);
 			resultText += entry;
 		}

@@ -46,7 +46,7 @@ export default function Home() {
 				reader.onload = (event) => {
 					let procesedText = automata(event.target.result);
 					let result = getKeywords(procesedText);
-					console.log(result);
+					// console.log(result);
 					triggerDownload(result, 'resultado.txt')
 		
 					setResultValue("Archivo de tokens generado con exito");

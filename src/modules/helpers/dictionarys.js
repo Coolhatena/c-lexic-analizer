@@ -68,10 +68,18 @@ const dictionarys = [
 	},
 	// Agrupation operators
 	{
+		"(": "OA",
+		")": "OA",
 		"{": "OA",
 		"}": "OA",
 		"[": "OA",
 		"]": "OA",
+		";": "OA"
+	},
+	// Separation operators
+	{
+		";": "SEMI",
+		",": "COMA"
 	}
 ];
 

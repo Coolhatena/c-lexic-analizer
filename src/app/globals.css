@@ -13,6 +13,10 @@ main {
 	flex-direction: column;
 }
 
+.input-container {
+	width: 100%;
+}
+
 #drop-area {
 	background-color: white;
 	width: 40%;

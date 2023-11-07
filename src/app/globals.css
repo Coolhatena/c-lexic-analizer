@@ -13,6 +13,22 @@ main {
 	flex-direction: column;
 }
 
+.input-selection-container {
+	display: flex;
+	justify-content: center;
+}
+
+.input-selection-button {
+	background-color: #cb1dde;
+	color: white;
+	padding: 0.5rem 1rem;
+	margin-top: 0.5rem;
+}
+
+.input-selection-button:hover {
+	background-color: #630f6d;
+}
+
 .input-container {
 	width: 100%;
 }
@@ -27,11 +43,35 @@ main {
 	margin: 10px auto;
 }
 
+.result-text {
+	color: white;
+}
 
-.txtbox {
-	width: 90%;
+.textbox-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.textbox {
+	width: 60%;
 	height: 200px;
 	margin-top: 10px;
 	padding: 10px;
 	border: 1px solid #ccc;
+}
+
+.textbox-button-container {
+	display: flex;
+	width: 60%;
+	justify-content: flex-end;
+
+}
+
+.textbox-button {
+	background-color: #cb1dde;
+	color: white;
+	padding: 0.5rem 1rem;
+	margin-top: 0.5rem;
+	border-radius: 5px;
 }

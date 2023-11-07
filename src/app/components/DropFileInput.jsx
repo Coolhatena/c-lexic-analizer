@@ -1,51 +1,39 @@
 import React from 'react'
 
-import automata from '../../modules/automata';
-import getKeywords from '../../modules/helpers/getKeywords';
+import { analizeText } from '@/modules/helpers/analizeText';
+import { triggerDownload } from '@/modules/helpers/triggerDownload';
 
 
-let DropFileInput = () => {
-	let dropAreaDragOver = (e) => {
+export const DropFileInput = ({ confirmSuccess }) => {
+	const dropAreaDragOver = (e) => {
 		e.preventDefault();
 		e.target.style.borderColor = "blue";
 	} 
 
-	let dropAreaDragLeave = (e) => {
+	const dropAreaDragLeave = (e) => {
 		e.target.style.borderColor = "#ccc";
 	} 
 
-	let dropAreaDrop = (e) => {
+	const dropAreaDrop = (e) => {
 		e.preventDefault();
 		e.target.style.borderColor = "#ccc";
 		const file = e.dataTransfer.files[0];
 		handleFile(file);
 	} 
 
-	let fileInputChange = (e) => {
+	const fileInputChange = (e) => {
 		const file = e.test.files[0];
 		handleFile(file);
 	}
-
-	let triggerDownload = (stringContent = '', filename = 'download.blob') => {
-		const blob = new Blob([stringContent], { type: 'text/plain' })
-		const url = URL.createObjectURL(blob)
-		const a = document.createElement('a')
-	  
-		a.href = url
-		a.download = filename
-		a.click()
-		URL.revokeObjectURL(url)
-	  }
 
 	let handleFile = (file) => {
 		if (file) {
 			if (file.name.endsWith(".txt") || file.name.endsWith(".c")) {
 				const reader = new FileReader();
 				reader.onload = (event) => {
-					let procesedText = automata(event.target.result);
-					let result = getKeywords(procesedText);
-					triggerDownload(result, 'resultado.txt')
-		
+					let result = analizeText(event.target.result);
+					triggerDownload(result, 'resultado.txt');
+					confirmSuccess(true);
 				};
 				reader.readAsText(file);
 			} else {
@@ -61,6 +49,4 @@ let DropFileInput = () => {
 			<input type="file" id="file-input" onChange={fileInputChange} style={{display: "none"}} accept=".txt"/>
 		</div>
 	)
-}
-
-export default DropFileInput
+};

@@ -55,7 +55,6 @@ const dictionarys = [
 		"=": "OR",
 		"+=": "OR",
 		"-=": "OR",
-		"-=": "OR",
 		"*=": "OR",
 		"/=": "OR",
 		"%=": "OR",
@@ -78,7 +77,6 @@ const dictionarys = [
 		"}": "OA",
 		"[": "OA",
 		"]": "OA",
-		";": "OA"
 	},
 	
 	// Separation operators

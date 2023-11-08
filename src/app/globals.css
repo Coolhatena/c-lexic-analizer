@@ -1,9 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
+
+:root {
+	--main-bg-color: #634832;
+	--button-background: #38220f;
+	--button-background-hover: #967259;
+}
 
 body {
-	background-color: #181818;
+	font-family: 'Playfair Display', serif;
+	background-color: var(--main-bg-color);
 }
 
 main {
@@ -11,6 +19,7 @@ main {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	font-family: 'Playfair Display', serif;
 }
 
 .input-selection-container {
@@ -19,14 +28,15 @@ main {
 }
 
 .input-selection-button {
-	background-color: #cb1dde;
+	background-color: var(--button-background);
 	color: white;
 	padding: 0.5rem 1rem;
 	margin-top: 0.5rem;
+	font-size: 1.1rem;
 }
 
-.input-selection-button:hover {
-	background-color: #630f6d;
+.input-selection-button:hover, .textbox-button:hover {
+	background-color: var(--button-background-hover);
 }
 
 .input-container {
@@ -69,9 +79,10 @@ main {
 }
 
 .textbox-button {
-	background-color: #cb1dde;
+	background-color: var(--button-background);
 	color: white;
 	padding: 0.5rem 1rem;
 	margin-top: 0.5rem;
 	border-radius: 5px;
+	font-size: 1.1rem;
 }

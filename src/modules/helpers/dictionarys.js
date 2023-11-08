@@ -36,6 +36,7 @@ const dictionarys = [
 		"include": "PR",
 		"main": "PR"
 	},
+
 	// Logical operators
 	{
 		"==": "OL",
@@ -48,6 +49,7 @@ const dictionarys = [
 		"||": "OL",
 		"!": "OL",
 	},
+
 	// Relational operators
 	{
 		"=": "OR",
@@ -58,6 +60,7 @@ const dictionarys = [
 		"/=": "OR",
 		"%=": "OR",
 	},
+
 	// Math operators
 	{
 		"+": "OM",
@@ -66,6 +69,7 @@ const dictionarys = [
 		"/": "OM",
 		"%": "OM",
 	},
+
 	// Agrupation operators
 	{
 		"(": "OA",
@@ -76,6 +80,7 @@ const dictionarys = [
 		"]": "OA",
 		";": "OA"
 	},
+	
 	// Separation operators
 	{
 		";": "SEMI",

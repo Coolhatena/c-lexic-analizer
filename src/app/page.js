@@ -16,6 +16,7 @@ export default function Home() {
 
 	return (
 		<main>
+			<h1 className='text-white text-5xl'>ANALIZADOR LEXICO</h1>
 			<div className='input-container'>
 				<div className='input-selection-container'>
 					<button className='input-selection-button' onClick={() => swapInputType("text")}>Texto</button>

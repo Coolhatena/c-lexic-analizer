@@ -53,6 +53,12 @@ main {
 	margin: 10px auto;
 }
 
+.drop-area-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .result-text {
 	color: white;
 }
@@ -82,7 +88,7 @@ main {
 	background-color: var(--button-background);
 	color: white;
 	padding: 0.5rem 1rem;
-	margin-top: 0.5rem;
-	border-radius: 5px;
+	margin: 0.5rem 0.25rem;
 	font-size: 1.1rem;
+	border-radius: 5px;
 }

@@ -16,7 +16,8 @@ export default function Home() {
 
 	return (
 		<main>
-			<h1 className='text-white text-5xl'>ANALIZADOR LEXICO</h1>
+			
+			<h1 className='text-white text-5xl m-1'>ANALIZADOR LEXICO</h1>
 			<div className='input-container'>
 				<div className='input-selection-container'>
 					<button className='input-selection-button' onClick={() => swapInputType("text")}>Texto</button>
@@ -26,7 +27,7 @@ export default function Home() {
 				{ inputType == "file" ? <DropFileInput confirmSuccess={setResultSuccess} /> : null }
 				
 			</div>
-			{ resultSuccess ? <p className='result-text text-lg'>Archivo generado con exito, descargando...</p> : null }
+			{ resultSuccess ? <p className='result-text text-xl m-5'>Archivo generado con exito, descargando...</p> : null }
 		</main>
 	)
 }

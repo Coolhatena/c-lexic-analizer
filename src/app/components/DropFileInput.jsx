@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { analizeText } from '@/modules/helpers/analizeText';
 import { triggerDownload } from '@/modules/helpers/triggerDownload';
 
 
 export const DropFileInput = ({ confirmSuccess }) => {
+	const [fileText, setFileText] = useState('')
+
 	const dropAreaDragOver = (e) => {
 		e.preventDefault();
 		e.target.style.borderColor = "blue";
@@ -31,6 +33,7 @@ export const DropFileInput = ({ confirmSuccess }) => {
 			if (file.name.endsWith(".txt") || file.name.endsWith(".c")) {
 				const reader = new FileReader();
 				reader.onload = (event) => {
+					setFileText(event.target.result)
 					let result = analizeText(event.target.result);
 					triggerDownload(result, 'resultado.txt');
 					confirmSuccess(true);
@@ -44,9 +47,17 @@ export const DropFileInput = ({ confirmSuccess }) => {
 
 
 	return (
-		<div id="drop-area" onDragOver={dropAreaDragOver} onDragLeave={dropAreaDragLeave} onDrop={dropAreaDrop}>
-			Arrastra y suelta un archivo .txt aquí
-			<input type="file" id="file-input" onChange={fileInputChange} style={{display: "none"}} accept=".txt"/>
+		<div className='drop-area-container'>
+			<div id="drop-area" onDragOver={dropAreaDragOver} onDragLeave={dropAreaDragLeave} onDrop={dropAreaDrop}>
+				Arrastra y suelta un archivo .txt aquí
+				<input type="file" id="file-input" onChange={fileInputChange} style={{display: "none"}} accept=".txt"/>
+			</div>
+			{
+				fileText ? 
+					<textarea className="textbox" wrap='off' value={fileText} readOnly></textarea> 
+					:
+					null
+			}
 		</div>
 	)
 };

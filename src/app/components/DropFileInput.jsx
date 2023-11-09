@@ -5,7 +5,8 @@ import { triggerDownload } from '@/modules/helpers/triggerDownload';
 
 
 export const DropFileInput = ({ confirmSuccess }) => {
-	const [fileText, setFileText] = useState('')
+	const [fileText, setFileText] = useState('');
+	const [tokenCount, setTokenCount] = useState(0);
 
 	const dropAreaDragOver = (e) => {
 		e.preventDefault();
@@ -34,7 +35,8 @@ export const DropFileInput = ({ confirmSuccess }) => {
 				const reader = new FileReader();
 				reader.onload = (event) => {
 					setFileText(event.target.result)
-					let result = analizeText(event.target.result);
+					let [ result, tokensNum ] = analizeText(event.target.result);
+					setTokenCount(tokensNum);
 					triggerDownload(result, 'resultado.txt');
 					confirmSuccess(true);
 				};
@@ -52,11 +54,17 @@ export const DropFileInput = ({ confirmSuccess }) => {
 				Arrastra y suelta un archivo .txt aquí
 				<input type="file" id="file-input" onChange={fileInputChange} style={{display: "none"}} accept=".txt"/>
 			</div>
+			{ 
+				tokenCount ? 
+					<div className='textbox-token-count-container'>
+						<p className='textbox-token-count'>Cantidad de tokens: {tokenCount}</p> 
+					</div>
+					: null 
+			}
 			{
 				fileText ? 
 					<textarea className="textbox" wrap='off' value={fileText} readOnly></textarea> 
-					:
-					null
+					: null
 			}
 		</div>
 	)

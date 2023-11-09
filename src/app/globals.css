@@ -92,3 +92,18 @@ main {
 	font-size: 1.1rem;
 	border-radius: 5px;
 }
+
+.textbox-token-count-container {
+	width: 60%;
+}
+
+.textbox-token-count {
+	color: white;
+	font-size: 1.2rem;
+	width: fit-content;
+	margin-top: 1rem;
+	background-color: #967259;
+	padding: 0.25rem 0.5rem;
+	border-radius: 5px;
+	font-style: italic;
+}

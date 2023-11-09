@@ -3,7 +3,7 @@ import dictionarys from './dictionarys';
 
 let getKeywords = (text) => {
 	let words = separateWords(text);
-	// console.log(words)
+	let tokenCount = words.length
 	let resultText = "";
 	const dictionaryNumber = dictionarys.length - 1
 	words.forEach(word => {
@@ -31,7 +31,7 @@ let getKeywords = (text) => {
 		}
 	});
 
-	return resultText
+	return [ resultText, tokenCount ]
 }
 
 export default getKeywords;

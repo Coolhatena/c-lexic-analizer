@@ -1,7 +1,7 @@
 const automata = (text) => {
 
 	const matriz = [
-		[0, 0, 1, 4, 0, 4],
+		[0, 0, 1, 4, 0, 0],
 		[4, 4, 2, 3, 4, 4],
 		[2, 2, 2, 2, 0, 2],
 		[3, 3, 0, 3, 3, 3],
@@ -16,10 +16,9 @@ const automata = (text) => {
 
 	while (i < text.length){
 		let actualChar = text[i]
-
 		if (estado === 0){
 			
-			if (!(["/", "*"].includes(actualChar))){
+			if (!(["/"].includes(actualChar))){
 				caracter = 0;
 				newText += actualChar;
 			} else if (actualChar == "/"){

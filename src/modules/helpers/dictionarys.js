@@ -41,16 +41,16 @@ const dictionarys = [
 
 	// Logical operators
 	{
-		">": "OL",
-		"<": "OL",
 		"&": "OL",
 		"|": "OL",
 		"!": "OL",
 	},
-
+	
 	// Relational operators
 	{
 		"=": "OR",
+		">": "OL",
+		"<": "OL",
 	},
 
 	// Math operators

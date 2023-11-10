@@ -24,7 +24,7 @@ let getKeywords = (text) => {
 
 		if(!dictCoincidence) {
 			let entry;
-			if (word.match(/[0-9]+/)){
+			if (word.match(/^[0-9]+/)){
 				entry = `${word}: NUM\n` 
 				idCount[6] += 1;
 			} else {

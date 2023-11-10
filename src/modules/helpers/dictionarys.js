@@ -33,10 +33,19 @@ const dictionarys = [
 		"void": "PR",
 		"volatile": "PR",
 		"while": "PR",
+		"main": "PR",
+
+		// Macros as PR
 		"include": "PR",
 		"printf": "PR",
 		"scanf": "PR",
-		"main": "PR"
+		"fprintf": "PR",
+		"fscanf": "PR",
+		"sprintf": "PR",
+		"fseek": "PR",
+		"fopen": "PR",
+		"fclose": "PR",
+		"getch": "PR",
 	},
 
 	// Logical operators

@@ -49,6 +49,7 @@ export const TextInput = ({ confirmSuccess }) => {
 			}
 			<textarea className="textbox" wrap='off' value={textAreaValue} onChange={handleTextAreaChange} placeholder='Escriba aqui su codigo C...'></textarea>
 			<div className='textbox-button-container'>
+				<button className='textbox-button' onClick={() => setTextAreaValue("")}>Limpiar</button>
 				<button className='textbox-button' onClick={downloadTextInput}>Guardar</button>
 				<button className='textbox-button' onClick={handleProcessing}>Procesar</button>
 			</div>

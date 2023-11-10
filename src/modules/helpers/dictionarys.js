@@ -34,17 +34,15 @@ const dictionarys = [
 		"volatile": "PR",
 		"while": "PR",
 		"include": "PR",
+		"printf": "PR",
+		"scanf": "PR",
 		"main": "PR"
 	},
 
 	// Logical operators
 	{
-		"==": "OL",
-		"!=": "OL",
 		">": "OL",
 		"<": "OL",
-		">=": "OL",
-		"<=": "OL",
 		"&": "OL",
 		"|": "OL",
 		"!": "OL",
@@ -53,11 +51,6 @@ const dictionarys = [
 	// Relational operators
 	{
 		"=": "OR",
-		"+=": "OR",
-		"-=": "OR",
-		"*=": "OR",
-		"/=": "OR",
-		"%=": "OR",
 	},
 
 	// Math operators

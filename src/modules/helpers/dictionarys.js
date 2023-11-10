@@ -75,7 +75,8 @@ const dictionarys = [
 	// Separation operators
 	{
 		";": "SEMI",
-		",": "COMA"
+		",": "COMA",
+		".": "DOT"
 	}
 ];
 

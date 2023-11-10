@@ -10,7 +10,8 @@ export const IdCounter = ({ countsByType }) => {
 		<p className='textbox-token-id-count'>OM: {countsByType[3]}</p> 
 		<p className='textbox-token-id-count'>OA: {countsByType[4]}</p> 
 		<p className='textbox-token-id-count'>OS: {countsByType[5]}</p> 
-		<p className='textbox-token-id-count'>ID: {countsByType[6]}</p>
+		<p className='textbox-token-id-count'>NUM: {countsByType[6]}</p>
+		<p className='textbox-token-id-count'>ID: {countsByType[7]}</p>
 	</div>
   )
 }

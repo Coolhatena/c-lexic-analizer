@@ -6,7 +6,7 @@ let getKeywords = (text) => {
 	let tokenCount = words.length
 	let resultText = "";
 	const dictionaryNumber = dictionarys.length - 1
-	let idCount = Array(dictionarys.length + 1).fill(0); 
+	let idCount = Array(dictionarys.length + 2).fill(0); 
 	words.forEach(word => {
 		let i = 0;
 		let dictCoincidence = false;
@@ -23,8 +23,14 @@ let getKeywords = (text) => {
 		}
 
 		if(!dictCoincidence) {
-			let entry = (word.match(/[0-9]+/)) ? `${word}: NUM\n` :`${word}: ID\n`;
-			idCount[6] += 1;
+			let entry;
+			if (word.match(/[0-9]+/)){
+				entry = `${word}: NUM\n` 
+				idCount[6] += 1;
+			} else {
+				entry = `${word}: ID\n`;
+				idCount[7] += 1;
+			}
 			resultText += entry;
 		}
 	});

@@ -16,16 +16,14 @@ export default function Home() {
 
 	return (
 		<main>
-			
-			<h1 className='text-white text-5xl m-1'>ANALIZADOR LEXICO</h1>
+			<h1 className='text-white text-5xl m-1 text-center'>ANALIZADOR LEXICO</h1>
 			<div className='input-container'>
 				<div className='input-selection-container'>
 					<button className='input-selection-button' onClick={() => swapInputType("text")}>Texto</button>
 					<button className='input-selection-button' onClick={() => swapInputType("file")}>Archivo</button>
 				</div>
 				{ inputType == "text" ? <TextInput confirmSuccess={setResultSuccess} /> : null }
-				{ inputType == "file" ? <DropFileInput confirmSuccess={setResultSuccess} /> : null }
-				
+				{ inputType == "file" ? <DropFileInput confirmSuccess={setResultSuccess} /> : null }	
 			</div>
 			{ resultSuccess ? <p className='result-text text-xl m-5'>Archivo generado con exito, descargando...</p> : null }
 		</main>

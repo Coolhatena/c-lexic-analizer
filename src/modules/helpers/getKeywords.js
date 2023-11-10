@@ -6,18 +6,16 @@ let getKeywords = (text) => {
 	let tokenCount = words.length
 	let resultText = "";
 	const dictionaryNumber = dictionarys.length - 1
+	let idCount = Array(dictionarys.length + 1).fill(0); 
 	words.forEach(word => {
 		let i = 0;
 		let dictCoincidence = false;
 		while (i <= dictionaryNumber){
-			// console.log(i)
-			// console.log(dictionaryNumber)
-			// console.log(dictionarys[i])
 			if (word in dictionarys[i]){
 				let value = dictionarys[i][word];
 				let entry = `${word}: ${value}\n`;
-				// console.log(entry);
 				resultText += entry;
+				idCount[i] += 1;
 				dictCoincidence = true;
 				break
 			}
@@ -26,12 +24,12 @@ let getKeywords = (text) => {
 
 		if(!dictCoincidence) {
 			let entry = (word.match(/[0-9]+/)) ? `${word}: NUM\n` :`${word}: ID\n`;
-			// console.log(entry);
+			idCount[6] += 1;
 			resultText += entry;
 		}
 	});
 
-	return [ resultText, tokenCount ]
+	return [ resultText, tokenCount, idCount ]
 }
 
 export default getKeywords;

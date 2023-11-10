@@ -97,7 +97,13 @@ main {
 	width: 60%;
 }
 
-.textbox-token-count {
+.textbox-token-id-count-container {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.textbox-token-count, .textbox-token-id-count {
 	color: white;
 	font-size: 1.2rem;
 	width: fit-content;
@@ -106,4 +112,10 @@ main {
 	padding: 0.25rem 0.5rem;
 	border-radius: 5px;
 	font-style: italic;
+}
+
+.textbox-token-id-count {
+	margin: 0.25rem 0.25rem 0.25rem 0rem;
+	font-size: 1rem;
+
 }

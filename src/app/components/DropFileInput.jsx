@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 
 import { analizeText } from '@/modules/helpers/analizeText';
 import { triggerDownload } from '@/modules/helpers/triggerDownload';
+import { IdCounter } from './IdCounter';
 
 
 export const DropFileInput = ({ confirmSuccess }) => {
 	const [fileText, setFileText] = useState('');
 	const [tokenCount, setTokenCount] = useState(0);
+	const [countsByType, setCountsByType] = useState([]);
 
 	const dropAreaDragOver = (e) => {
 		e.preventDefault();
@@ -35,8 +37,9 @@ export const DropFileInput = ({ confirmSuccess }) => {
 				const reader = new FileReader();
 				reader.onload = (event) => {
 					setFileText(event.target.result)
-					let [ result, tokensNum ] = analizeText(event.target.result);
+					let [ result, tokensNum, counts ] = analizeText(event.target.result);
 					setTokenCount(tokensNum);
+					setCountsByType(counts);
 					triggerDownload(result, 'resultado.txt');
 					confirmSuccess(true);
 				};
@@ -58,6 +61,7 @@ export const DropFileInput = ({ confirmSuccess }) => {
 				tokenCount ? 
 					<div className='textbox-token-count-container'>
 						<p className='textbox-token-count'>Cantidad de tokens: {tokenCount}</p> 
+						<IdCounter countsByType={countsByType} />
 					</div>
 					: null 
 			}

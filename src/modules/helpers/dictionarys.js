@@ -58,8 +58,8 @@ const dictionarys = [
 	// Relational operators
 	{
 		"=": "OR",
-		">": "OL",
-		"<": "OL",
+		">": "OR",
+		"<": "OR",
 	},
 
 	// Math operators
